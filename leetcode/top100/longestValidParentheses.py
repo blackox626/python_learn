@@ -12,8 +12,6 @@ class Solution(object):
         maxLen = 0
         curLen = 0
 
-        topIndex = -1
-
         for index, i in enumerate(s):
             if stack and i in dic:
                 if stack[-1] == dic[i]:
