@@ -1,7 +1,7 @@
 class Solution(object):
 
     # 思想：动态规划   由n-1 的 情况 推测 n 的情况
-
+    # Dynamic programming dp
     def generateParenthesis(self, n):
         """
         :type n: int
