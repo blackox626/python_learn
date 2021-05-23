@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 """
 冒泡排序
+每一轮选一个最大的
 bubble + sort
 """
 
 from py_learn.decoration import timing_func
 
-data_count = 20
-
 
 def bubble_sort(ds):
-    for i in range(0, data_count):
-        for j in range(0, data_count - i - 1):
+    for i in range(0, len(ds)):
+        for j in range(0, len(ds) - i - 1):
             if ds[j] > ds[j + 1]:
                 ds[j], ds[j + 1] = ds[j + 1], ds[j]
 

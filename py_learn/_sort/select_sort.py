@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
 选择排序
-insert + sort
+每一轮选一个最小的
+selection + sort
 """
-
-data_count = 20
 
 
 def selection_sort(ds):
-    for i in range(0, data_count - 1):
-        for j in range(i + 1, data_count):
+    for i in range(0, len(ds) - 1):
+        for j in range(i + 1, len(ds)):
             if ds[j] < ds[i]:
                 ds[i], ds[j] = ds[j], ds[i]
 
