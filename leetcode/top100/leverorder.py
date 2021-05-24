@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+"""
+给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
+"""
 
 
 class Solution(object):
@@ -16,12 +19,15 @@ class Solution(object):
         lst = []
 
         queue = []
-        queue.append(root)
+        if root:
+            queue.append(root)
         while len(queue) > 0:
 
             _lst = []
 
-            for i in range(len(queue)):
+            length = len(queue)
+
+            for i in range(length):
                 node = queue.pop(0)
                 _lst.append(node.val)
                 if node.left is not None:
