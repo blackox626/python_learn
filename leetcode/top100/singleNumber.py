@@ -4,6 +4,10 @@ from typing import List
 
 
 class Solution(object):
+    """
+    给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+    """
+
     def singleNumber(self, nums):
         """
         :type nums: List[int]
@@ -11,7 +15,10 @@ class Solution(object):
         """
         return reduce(lambda x, y: x ^ y, nums)
 
-    # 2 singleNumber
+    """
+    给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。你可以按 任意顺序 返回答案。
+    """
+
     def singleNumber_2(self, nums: List[int]) -> List[int]:
         ret = reduce(lambda x, y: x ^ y, nums)
         div = 1

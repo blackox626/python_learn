@@ -32,3 +32,6 @@ class Solution(object):
                 stack.append(i)
 
         return not stack
+
+
+print(Solution().isValid("()[]{}"))
