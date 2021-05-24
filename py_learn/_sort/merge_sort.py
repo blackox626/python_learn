@@ -44,11 +44,42 @@ def merge_sort(ds):
     sort(ds, left, right - 1)
 
 
-# print(merge([1, 3, 5, 2, 4], 0, 2, 4))
+def merge2(left, right):
+    lst_ = []
+
+    p1 = 0
+    p2 = 0
+
+    while p1 < len(left) and p2 < len(right):
+        if left[p1] < right[p2]:
+            lst_.append(left[p1])
+            p1 += 1
+        else:
+            lst_.append(right[p2])
+            p2 += 1
+
+    # list extend 的 append 有区别
+    if p1 < len(left):
+        lst_.extend(left[p1:])
+    if p2 < len(right):
+        lst_.extend(right[p2:])
+
+    return lst_
+
+
+def merge_sort2(ds):
+    # 注意结束条件
+    if len(ds) < 2:
+        return ds
+    mid = len(ds) // 2
+    left = merge_sort2(ds[:mid])
+    right = merge_sort2(ds[mid:])
+    return merge2(left, right)
+
 
 random_wait_sort = [12, 34, 32, 24, 28, 39, 5,
                     22, 11, 25, 33, 32, 1, 25, 3, 8, 7, 1, 34, 7]
 
-merge_sort(random_wait_sort)
+print(merge_sort2(random_wait_sort))
 
 print(random_wait_sort)
