@@ -1,8 +1,8 @@
-'''
+"""
 有序链表，找到只出现一次的数字
 1->2->2->3->3->5
 1,5
-'''
+"""
 
 
 class Node:
@@ -11,8 +11,8 @@ class Node:
         self.next = None
 
 
-str = input()
-lst = str.split(',')
+instr = input()
+lst = instr.split(',')
 
 root = p = Node(lst[0])
 for i in lst[1:]:
