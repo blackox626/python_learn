@@ -36,6 +36,6 @@ def topk_split(nums, k, left, right):
 
 
 arr = [1, 3, -2, 3, 0, -19]
-k = 2
-print(topk_split(arr, k, 0, len(arr) - 1))
+topk = 2
+print(topk_split(arr, topk, 0, len(arr) - 1))
 print(arr)
