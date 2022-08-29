@@ -7,17 +7,17 @@ class TreeNode(object):
 
 
 class Solution(object):
-    def compare(self, left, right):
-        if left is not None and right is None:
+    def compare(self, le, ri):
+        if le is not None and ri is None:
             return False
-        elif right is not None and left is None:
+        elif ri is not None and le is None:
             return False
-        elif right is None and left is None:
+        elif ri is None and le is None:
             return True
-        elif left.val != right.val:
+        elif le.val != ri.val:
             return False
         else:
-            return self.compare(left.left, right.right) and self.compare(left.right, right.left)
+            return self.compare(le.left, ri.right) and self.compare(le.right, ri.left)
 
     """
     对称二叉树
