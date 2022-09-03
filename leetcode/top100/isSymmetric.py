@@ -40,8 +40,11 @@ class Solution(object):
     def reverse(self, root):
         if not root:
             return root
-        root.right = self.reverse(root.left)
-        root.left = self.reverse(root.right)
+
+        root.left, root.right = root.right, root.left
+
+        self.reverse(root.left)
+        self.reverse(root.right)
         return root
 
     """
