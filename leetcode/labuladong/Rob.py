@@ -1,26 +1,25 @@
 class Solution(object):
 
     # 自顶向下
-    def rob1(self, nums,start):
+    def rob1(self, nums, start):
         count = len(nums)
 
         if start >= count:
             return 0
 
-        res = max(nums[start] + self.rob1(nums,start +2),self.rob1(nums,start+1))
+        res = max(nums[start] + self.rob1(nums, start + 2), self.rob1(nums, start + 1))
 
         return res
 
     # 自底向上
-    def rob(self,nums):
+    def rob(self, nums):
         count = len(nums)
-        list = [0] * (count+2)
+        list = [0] * (count + 2)
 
-        for i in range(count-1,-1,-1):
-            list[i] = max(list[i+1],list[i+2] + nums[i])
+        for i in range(count - 1, -1, -1):
+            list[i] = max(list[i + 1], list[i + 2] + nums[i])
 
-        return  list[0]
-
+        return list[0]
 
         # money = 0
         #
@@ -35,6 +34,5 @@ class Solution(object):
         # return max(list_two[count-1][0],list_two[count-1][1])
 
 
-print(Solution().rob([2,1,7,9,3,1]))
-print(Solution().rob1([2,1,7,9,3,1],0))
-
+print(Solution().rob([2, 1, 7, 9, 3, 1]))
+print(Solution().rob1([2, 1, 7, 9, 3, 1], 0))
